@@ -1,17 +1,16 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.shortcuts import redirect
+from django.urls import include, path
 
-from django.shortcuts import render
 
 def home_view(request):
-    return render(
-        request,
-        'base.html',
-    )
+    return redirect('product_list')
+
 
 urlpatterns = [
-    path('home/', home_view), 
+    path('', home_view, name='home'),
     path('admin/', admin.site.urls),
+
     path('', include('brands.urls')),
     path('', include('categories.urls')),
     path('', include('suppliers.urls')),
@@ -19,3 +18,4 @@ urlpatterns = [
     path('', include('outflows.urls')),
     path('', include('products.urls')),
 ]
+
