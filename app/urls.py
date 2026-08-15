@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import include, path
+from . import views
 
 
 def home_view(request):
@@ -8,9 +9,10 @@ def home_view(request):
 
 
 urlpatterns = [
-    path('', home_view, name='home'),
+    
     path('admin/', admin.site.urls),
 
+    path('', views.home, name='home'),
     path('', include('brands.urls')),
     path('', include('categories.urls')),
     path('', include('suppliers.urls')),
