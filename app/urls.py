@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import include, path
+from django.contrib.auth import views as auth_views
 from . import views
 
 
@@ -11,6 +12,8 @@ def home_view(request):
 urlpatterns = [
     
     path('admin/', admin.site.urls),
+
+    path('login/', auth_views.LoginView.as_view(), name='login'),
 
     path('', views.home, name='home'),
     path('', include('brands.urls')),
