@@ -50,12 +50,15 @@
               </a>
             </li>
           <li class="nav-item">
-            <form action="#" method="post" id="logout-form" class="nav-link px-0 align-middle">
+            {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post" id="logout-form" class="nav-link px-0 align-middle">
               <button type="submit" class="btn btn-link text-decoration-none text-reset nav-link px-0 align-middle">
+                {% csrf_token %}
                 <i class="bi bi-box-arrow-right fs-4 align-middle"></i>
                 <span class="ms-1 align-middle">Sair</span>
               </button>
             </form>
+            {% endif %}
           </li>
         </ul>
       </div>
