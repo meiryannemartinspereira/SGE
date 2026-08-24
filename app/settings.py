@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 import os
 from pathlib import Path
+from datetime import timedelta
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -59,6 +60,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'rest_framework_simplejwt',
 
     'brands',
     'categories',
@@ -171,4 +173,18 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=1),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+}
 
