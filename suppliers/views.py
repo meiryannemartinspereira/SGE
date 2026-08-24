@@ -45,7 +45,7 @@ class SupplierDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView
     success_url = reverse_lazy('supplier_list')
     permission_required = 'suppliers.delete_supplier'
 
-class SupplierCreateListAPIView(generics.ListCreateAPIView):
+class SupplierListCreateAPIView(generics.ListCreateAPIView):
     queryset = models.Supplier.objects.all()
     serializer_class = serializers.SupplierSerializer
 
