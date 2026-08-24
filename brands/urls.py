@@ -9,4 +9,5 @@ urlpatterns = [
     path('brands/<int:pk>/delete/', views.BrandDeleteView.as_view(), name='brand_delete'),
 
     path('api/brands/', views.BrandCreateListAPIView.as_view(), name='brand-create-list-api-view'),
+    path('api/brands/<int:pk>/', views.BrandRetrieveUpdateDestroyAPIView.as_view(), name='brand-retrieve-update-destroy-api-view'),
 ]
