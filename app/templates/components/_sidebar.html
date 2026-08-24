@@ -23,30 +23,6 @@
               </a>
             </li>
           {% endif %}
-          {% if perms.clients.view_client %}
-            <li>
-              <a href="{% url 'client_list' %}" class="nav-link px-0 align-middle">
-                <i class="bi bi-people fs-4"></i>
-                <span class="ms-1">Clientes</span>
-              </a>
-            </li>
-          {% endif %}
-          {% if perms.users.view_user %}
-            <li>
-              <a href="{% url 'user_list' %}" class="nav-link px-0 align-middle">
-                <i class="bi bi-person fs-4"></i>
-                <span class="ms-1">Usuários</span>
-              </a>
-            </li>
-          {% endif %}
-          {% if perms.roles.view_role %}
-            <li>
-              <a href="{% url 'role_list' %}" class="nav-link px-0 align-middle">
-                <i class="bi bi-shield-lock fs-4"></i>
-                <span class="ms-1">Funções</span>
-              </a>
-            </li>
-          {% endif %}
           {% if perms.brands.view_brand %}
             <li>
               <a href="{% url 'brand_list' %}" class="nav-link px-0 align-middle">
