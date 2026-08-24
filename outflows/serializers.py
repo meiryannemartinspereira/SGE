@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from inflows.models import Outflow
+from outflows.models import Outflow
 
 class OutflowSerializer(serializers.ModelSerializer):
     class Meta:
